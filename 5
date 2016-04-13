@@ -13,3 +13,54 @@
 外层循环确定起始判断元素，
 
 内层循环完成判断并交换的任务。
+
+
+
+
+
+
+
+冒泡排序和选择排序一样，需要用到嵌套循环。
+
+以下是冒泡排序的代码：
+
+#include <stdio.h>
+ 
+int main(void)
+{
+    int array[10];
+    int i;
+    for(i = 0; i < 10; i++)
+    {
+        scanf("%d", &array[i]); 
+    }
+    for(i = 0; i < 9; i++)
+    {
+        int j;
+        int temp;
+        for(j = 0; j < 9 - i; j++)
+        {
+            if(array[j]>array[j+1])
+            {
+                temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }
+    }
+    for(i = 0; i < 10; i++)
+    {
+        if(i==9)
+            printf("%d \n", array[i]);
+        else
+            printf("%d ", array[i]);    
+    }
+    return 0;
+}
+
+
+
+
+
+
+
