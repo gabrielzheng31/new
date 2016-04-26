@@ -1,7 +1,7 @@
 //6-3
 #include <stdio.h>
 int stuaver(const int score[][5], int);
-//void couaver(const int score[][5], int);
+void couaver(const int score[][5], int);
 
 int main(void) {
 	int score[10][5];
@@ -11,19 +11,20 @@ int main(void) {
 			scanf("%d", &score[i][j]);
 		}
 	}
-	stuaver(score, 10);
-	//couaver(score, 10);
+	int rank = stuaver(score, 10);
+	couaver(score, 10);
 	printf("Part 3: a student  and  course scores of the student "
-		"whose average is the highest");
+		"whose average is the highest\n");
+	printf("%d\n", rank+1);
 	for (j = 0; j<5; j++)
-		
-	printf("%d\n%d", stuaver(score, 10) + 1, score[stuaver(score, 10)][j]);
+		printf("%d ", score[rank][j]);
+	return 0;
 }
 
 int stuaver(const int score[][5], int n) {
 	double aver[10] = {};
 	int i, j;
-	printf("Part 1: the averages of every student");
+	printf("Part 1: the averages of every student\n");
 	for (i = 0; i < n; i++) {
 		float sum = 0;
 		for (j = 0; j < 5; j++) {
@@ -33,22 +34,21 @@ int stuaver(const int score[][5], int n) {
 		printf("%f\n", aver[i]);
 	}
 	int max;
-	for (max = 0, i = 0; i<n; i++)
-		if (aver[max]>aver[i])
+	for (max = 0, i = 0; i < n; i++)
+		if (aver[max]<aver[i])
 			max = i;
-	return i;
+	return max;
 }
 
-/*void couaver(const int score[][5], int n) {
-	//float aver;
+void couaver(const int score[][5], int n) {
 	int i, j;
-	printf("Part 2: the averages of every course score");
-	for (j = 0; j < 5; i++) {
+	printf("Part 2: the averages of every course score\n");
+	for (j = 0; j < 5; j++) {
 		float sum = 0;
-		for (i = 0; i < n; j++) {
-			sum += score[j][i];
+		for (i = 0; i < n; i++) {
+			sum += score[i][j];
 		}
 		printf("%f\n", sum / 10.0);
 	}
 	return;
-}*/
+}
