@@ -1,5 +1,4 @@
-//6-3
-#include <stdio.h>
+/*#include <stdio.h>
 int stuaver(const int score[][5], int);
 void couaver(const int score[][5], int);
 
@@ -51,4 +50,4 @@ void couaver(const int score[][5], int n) {
 		printf("%f\n", sum / 10.0);
 	}
 	return;
-}
+}*/
