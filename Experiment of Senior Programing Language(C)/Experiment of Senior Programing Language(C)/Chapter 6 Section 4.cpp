@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #define SWAP(X,Y) X = X+ Y; Y = X -Y; X = X - Y;
 
 int main(void) {
@@ -7,4 +7,4 @@ int main(void) {
 	SWAP(X, Y);
 	printf("%d %d", X, Y);
 	return 0;
-}
+}*/
